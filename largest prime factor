@@ -33,3 +33,4 @@ if __name__ == '__main__':
         ob = Solution()
         print(ob.largestPrimeFactor(N))
 # } Driver Code Ends
+
