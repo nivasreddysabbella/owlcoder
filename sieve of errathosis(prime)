@@ -6,5 +6,5 @@
         isprime[1] = False
         for i in range(2, isqrt(n)+1):
             if isprime[i]:
-                for x in range(2*i,n,i):
+                for x in range(i*i,n,i):
                     isprime[x] = False
