@@ -1,0 +1,9 @@
+m,n=map(int,input().split())
+def gcd(a,i):
+    if i==0:
+        return a
+    return gcd(i,a%i)
+c=gcd(m,n)
+print(c)
+lcm=(m*n)//c
+print(lcm)
