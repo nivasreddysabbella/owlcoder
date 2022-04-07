@@ -1,0 +1,33 @@
+class Solution:
+    def chec(self,ap,asp):
+        if ap==asp:
+            return 1
+        return 0
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        n=len(s)
+        k=len(p)
+        if n<k:
+            return []
+        ap=[0]*26
+        asp=[0]*26
+        ni=[]
+        for i in range(k):
+            ap[ord(p[i])-97]+=1
+            asp[ord(s[i])-97]+=1
+        c=self.chec(ap,asp)
+        if c:
+            ni.append(0)
+        i=1
+        j=len(p)
+        while j<n:
+            asp[ord(s[i-1])-97]-=1
+            asp[ord(s[j])-97]+=1
+            #print(asp)
+            c=self.chec(ap,asp)
+            if c:
+                ni.append(i)
+            i+=1
+            j+=1
+        return ni
+            
+            
